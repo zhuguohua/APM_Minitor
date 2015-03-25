@@ -1,0 +1,21 @@
+﻿生成启动时间为 2015/3/25 16:04:53。
+     1>项目“E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor_Text\APM_Minitor\APM_Minitor\APM_Minitor\APM_Minitor.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\APM_Minitor.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt APM_Minitor\Application.cpp APM_Minitor\Main_Frame.cpp APM_Minitor\Socket_Client.cpp
+         Application.cpp
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         Socket_Client.cpp
+         Main_Frame.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor_Text\APM_Minitor\APM_Minitor\Debug\APM_Minitor.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor_Text\APM_Minitor\APM_Minitor\Debug\APM_Minitor.pdb" /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor_Text\APM_Minitor\APM_Minitor\Debug\APM_Minitor.lib" /MACHINE:X86 Debug\Application.obj
+         Debug\Gprs.obj
+         Debug\Main_Frame.obj
+         Debug\Socket_Client.obj
+         Debug\stdafx.obj
+         APM_Minitor.vcxproj -> E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor_Text\APM_Minitor\APM_Minitor\Debug\APM_Minitor.exe
+     1>已完成生成项目“E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor_Text\APM_Minitor\APM_Minitor\APM_Minitor\APM_Minitor.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.87
