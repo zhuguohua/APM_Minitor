@@ -3,6 +3,7 @@
 #include "Socket_Client.h"
 #include "Main_Frame.h"
 #include "Application.h"
+#include "../ClientIdDlg.h"
 
 BEGIN_MESSAGE_MAP(Class_Main_App, CWinApp)
 	ON_COMMAND(ID_BUTTON_RTL, Do_Rtl)
@@ -105,6 +106,8 @@ void Class_Main_App::Do_Open_Umbrella()
 
 void Class_Main_App::DoConnetOrNot()
 {
+
+	
 	if (g_bDoConnect == TRUE)
 	{
 		g_bDoConnect = FALSE;
@@ -113,10 +116,16 @@ void Class_Main_App::DoConnetOrNot()
 	}
 	else
 	{
-		g_bDoConnect = TRUE;
-		((Class_Main_Frame *)m_pMainWnd)->m_pButtonConnectOrNot->SetWindowTextW(_T("¶Ï¿ª"));
+		CClientIdDlg dlg;
+		dlg.m_nClientId = sc_Sock_Client.m_nClientId;
+		if (dlg.DoModal() == IDOK)
+		{
+			sc_Sock_Client.m_nClientId = dlg.m_nClientId;
+			g_bDoConnect = TRUE;
+			((Class_Main_Frame *)m_pMainWnd)->m_pButtonConnectOrNot->SetWindowTextW(_T("¶Ï¿ª"));
+		}
 	}
-	
+
 }
 
 unsigned int __stdcall Thread_Func(void *p)

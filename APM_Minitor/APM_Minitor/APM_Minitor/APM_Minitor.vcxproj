@@ -17,6 +17,8 @@
     <ClInclude Include="APM_Minitor\Main_Frame.h" />
     <ClInclude Include="APM_Minitor\Socket_Client.h" />
     <ClInclude Include="APM_Minitor\stdafx.h" />
+    <ClInclude Include="ClientIdDlg.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="APM_Minitor\Application.cpp" />
@@ -26,6 +28,12 @@
     <ClCompile Include="APM_Minitor\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ClientIdDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="APM_Minitor.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B387BC5F-EDE9-4630-8961-8CE41CD52D10}</ProjectGuid>
@@ -86,4 +94,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="APM_Minitor.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

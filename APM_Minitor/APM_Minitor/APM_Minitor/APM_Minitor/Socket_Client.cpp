@@ -62,6 +62,7 @@ BOOL Socket_Client::Socket_Client_Init(Gprs *p_Gprs)
 	ul64_Def_Time = 0;
 
 	m_bNeedCloseConnection = FALSE;
+	m_nClientId = 1;
 
 	p_ch_Buff = _ch_Buff_;
 
@@ -241,13 +242,18 @@ BOOL Socket_Client::Try_Login_Server(void)
 {
 	int n_Ret = 0;
 	char ch[4] = {0};
-	ch[0] = 1;// client id
-	ch[1] = 1;// client type
+	ch[0] = m_nClientId;// client id
+	ch[1] = STATION_CLIENT_TYPE;// client type
 	int *p = (int *)ch;
+
+	//CString str;
+	//str.Format(_T("%d"), m_nClientId);
+	//AfxMessageBox(str);
 
 	int n_Count = 0;
 
 	p_Gprs->Ready_To_Login_Server();
+	p_Gprs->SetCurrentClientId(m_nClientId);
 
 	while (1)
 	{
@@ -267,6 +273,12 @@ BOOL Socket_Client::Try_Login_Server(void)
 				if (p_Gprs->Check_Login_Server())
 				{
 					return TRUE;
+				}
+				else
+				{
+					AfxMessageBox(_T("Close socket"));
+					Close_Socket_Client();
+					return FALSE;
 				}
 			}
 		}//end if (Wait_For_Data(3) > 0)

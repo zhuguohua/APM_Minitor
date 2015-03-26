@@ -13,6 +13,9 @@ private:
 	GPRS_DATA_PACKET_INFO m_gdps_Gprs_Packet_Info;
 	APM_DATA_MINITOR adm_APM_Data;
 	BOOL b_Login_Success;
+	// the id received from sever
+	int m_nClientIdRecv;
+	int m_nCurrentClientId;
 
 public:
 	BOOL Try_Capture_Gprs_Data_Packet(char *p_ch_Src, int n_Count);
@@ -21,6 +24,9 @@ public:
 	float Get_Target(const uint8_t *p_ch_Data, int n_Param);
 	BOOL Check_Login_Server(void);
 	void Ready_To_Login_Server(void);
+
+	int GetClientIdRecv(void);
+	void SetCurrentClientId(int nClientId);
 
 	P_APM_DATA_MINITOR Get_APM_Data(void)
 	{

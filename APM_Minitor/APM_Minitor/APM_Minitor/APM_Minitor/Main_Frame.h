@@ -4,6 +4,7 @@
 #define ID_BUTTON_RTL 10000
 #define ID_BUTTON_OPEN_UMBRELLA 10001
 #define ID_BUTTON_CONNECT_OR_NOT 10002
+#define ID_CLIENT_ID_EDIT 10003
 
 class Class_Main_Frame : public CFrameWnd
 {
@@ -15,6 +16,7 @@ public:
 private:
 	CButton *m_p_Button_Rtl;
 	CButton *m_p_Button_Open_Umbrella;
+	CEdit *m_pClientIdEdit;
 public:
 	CButton *m_pButtonConnectOrNot;
 public:

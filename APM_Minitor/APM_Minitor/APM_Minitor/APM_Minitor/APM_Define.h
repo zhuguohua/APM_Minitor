@@ -92,6 +92,19 @@ typedef struct _GPRS_DATA_PACKET_
 	char ch_Stop;
 }GPRS_DATA_PACKET, *P_GPRS_DATA_PACKET;
 
+typedef struct _GPRS_LOGIN_DATA_
+{
+	char ch_Start;
+	uint8_t ui8_Data_Flag;
+	// data
+	uint8_t ui8_Client_Id;
+	uint8_t ui8_Client_Type;
+	uint8_t ui8_Reserve[2];
+	// ==============
+	uint16_t ui16_Checksum;
+	char ch_Stop;
+}GPRS_LOGIN_DATA_PACKET, *P_GPRS_LOGIN_DATA_PACKET;
+
 typedef struct _GPRS_DATA_PACKET_INFO_
 {
 	uint8_t ui8_Recv_End : 1;

@@ -113,6 +113,7 @@ P_GPRS_DATA_PACKET_INFO Gprs::Get_Gprs_Data_Packet_Info(void)
 BOOL Gprs::Parse_Gprs_Data(void)
 {
 	P_GPRS_DATA_PACKET p_ch_Buff = (P_GPRS_DATA_PACKET)m_gdps_Gprs_Packet_Info.ch_Gprs_Data_Buff;
+	P_GPRS_LOGIN_DATA_PACKET pLDP;
 
 	switch (p_ch_Buff->ch_Flag)
 	{
@@ -163,13 +164,34 @@ BOOL Gprs::Parse_Gprs_Data(void)
 		//return TRUE;
 		break;
 	case GPRS_DATA_LOGIN:
-		b_Login_Success = 1;
+		pLDP = (P_GPRS_LOGIN_DATA_PACKET)p_ch_Buff;
+		m_nClientIdRecv = pLDP->ui8_Client_Id;
+		if (pLDP->ui8_Client_Id != m_nCurrentClientId)
+		{
+			b_Login_Success = 0;
+		}
+		else
+		{
+			b_Login_Success = 1;
+		}
+		
 		break;
 	default:
 		break;
 	}
 
 	return FALSE;
+}
+
+
+int Gprs::GetClientIdRecv(void)
+{
+	return m_nClientIdRecv;
+}
+
+void Gprs::SetCurrentClientId(int nClientId)
+{
+	m_nCurrentClientId = nClientId;
 }
 
 void Gprs::Ready_To_Login_Server(void)

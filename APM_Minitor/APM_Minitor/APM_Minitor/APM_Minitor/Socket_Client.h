@@ -61,6 +61,9 @@ private:
 	#define ch_Buff p_ch_Buff
 
 public:
+	volatile int m_nClientId;
+
+public:
 	BOOL Socket_Client_Init(Gprs *p_Gprs);
 	BOOL Socket_Client_Init(void);
 	BOOL Try_Connect_Server(const char *p_ch_Server_IP, int n_COM);

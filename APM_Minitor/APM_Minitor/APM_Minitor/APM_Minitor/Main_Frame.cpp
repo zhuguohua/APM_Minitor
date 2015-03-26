@@ -3,6 +3,7 @@
 #include "Socket_Client.h"
 #include "Application.h"
 #include "Main_Frame.h"
+#include "../resource.h"
 
 
 BEGIN_MESSAGE_MAP(Class_Main_Frame, CFrameWnd)
@@ -30,7 +31,8 @@ Class_Main_Frame::Class_Main_Frame(const CString str_Frame_Name)
 
 	//CRect rect = CRect(100, 100, 100, 100);
 	//CFrameWnd *pView = new CFrameWnd();
-	//pView->Create(NULL, NULL, WS_CHILD | WS_VISIBLE, rect, this);
+	//pView->Create(NULL, _T("AA"), WS_CHILD | WS_VISIBLE, rect, this);
+	//pView->ShowWindow(SW_SHOW);
 
 	return;
 }
@@ -74,9 +76,15 @@ void Class_Main_Frame::Create_Button(int n_X, int n_Y)
 	m_pButtonConnectOrNot = new CButton;
 	m_pButtonConnectOrNot->Create(_T("Á¬½Ó"), WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, CRect(n_X, n_Y, n_X + n_Width, n_Y + n_Height), this, ID_BUTTON_CONNECT_OR_NOT);
 
+	//n_X += 60;
+	//m_pClientIdEdit = new CEdit;
+	//m_pClientIdEdit->Create(WS_CHILD | WS_VISIBLE | WS_BORDER, CRect(n_X, n_Y, n_X + n_Width, n_Y + n_Height), this, ID_CLIENT_ID_EDIT);
+
 	m_p_Button_Rtl->ShowWindow(SW_SHOW);
 	m_p_Button_Open_Umbrella->ShowWindow(SW_SHOW);
 	m_pButtonConnectOrNot->ShowWindow(SW_SHOW);
+
+	//m_pClientIdEdit->ShowWindow(SW_SHOW);
 }
 
 void Class_Main_Frame::OnPaint()
