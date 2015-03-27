@@ -1,15 +1,8 @@
-﻿生成启动时间为 2015/3/26 17:14:35。
+﻿生成启动时间为 2015/3/27 11:25:24。
      1>项目“E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor\APM_Minitor\APM_Minitor\APM_Minitor\APM_Minitor.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\APM_Minitor.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt APM_Minitor\Application.cpp APM_Minitor\Gprs.cpp APM_Minitor\Main_Frame.cpp APM_Minitor\Socket_Client.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\APM_Minitor.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt APM_Minitor\Socket_Client.cpp
          Socket_Client.cpp
-         Gprs.cpp
-         正在生成代码...
-         正在编译...
-         Application.cpp
-         正在生成代码...
-         正在跳过...(未检测到相关更改)
-         Main_Frame.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor\APM_Minitor\APM_Minitor\Debug\APM_Minitor.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor\APM_Minitor\APM_Minitor\Debug\APM_Minitor.pdb" /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\project\DESIGN\DESIGN\Design Developping\APM_Minitor\APM_Minitor\APM_Minitor\Debug\APM_Minitor.lib" /MACHINE:X86 Debug\APM_Minitor.res
          Debug\Application.obj
@@ -23,4 +16,4 @@
 
 生成成功。
 
-已用时间 00:00:00.97
+已用时间 00:00:01.15

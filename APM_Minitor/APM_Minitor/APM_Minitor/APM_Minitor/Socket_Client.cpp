@@ -45,6 +45,7 @@ char *P_MODE_LIST[] =
 
 char ch_Hartbeat[] = { 'S', 13, '0', 'C', '0', '0', '0', '0', 'E', 'R', 'R' };
 
+char g_chServerIPArr[100];
 
 volatile CONNECT_STATE cs_Connect_State;
 char _ch_Buff_[1000];
@@ -63,6 +64,9 @@ BOOL Socket_Client::Socket_Client_Init(Gprs *p_Gprs)
 
 	m_bNeedCloseConnection = FALSE;
 	m_nClientId = 1;
+	m_strServerIP = "121.42.15.225";
+	m_uiServerCom = 5990;
+	m_pchServerIP = (volatile char *)g_chServerIPArr;
 
 	p_ch_Buff = _ch_Buff_;
 
@@ -294,6 +298,19 @@ BOOL Socket_Client::Try_Login_Server(void)
 	return FALSE;
 }
 
+#include <string.h>
+char * Socket_Client::GetServerIP(void)
+{
+	strcpy_s((char *)m_pchServerIP, m_strServerIP.GetLength()+1, (const char *)m_strServerIP.GetBuffer());
+	//wcscpy_s((char *)m_pchServerIP, (const char *)m_strServerIP.GetBuffer());
+	m_pchServerIP[16] = '\0';
+
+	//CString str;
+	//str.Format(_T("m_pchServerIP : %d") + sc_Sock_Client.m_strServerIP, sc_Sock_Client.m_uiServerCom);
+	AfxMessageBox((LPCTSTR)m_pchServerIP);
+
+	return  (char *)(m_strServerIP.GetBuffer());
+}
 
 
 

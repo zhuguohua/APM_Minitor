@@ -62,6 +62,9 @@ private:
 
 public:
 	volatile int m_nClientId;
+	CString m_strServerIP;
+	volatile char *m_pchServerIP;
+	volatile UINT m_uiServerCom;
 
 public:
 	BOOL Socket_Client_Init(Gprs *p_Gprs);
@@ -76,6 +79,7 @@ public:
 	int Send_Data_Protol(unsigned int ui32_Data_To_Send, GPRS_DATA_FLAG gpf_Flag);
 	BOOL Try_Login_Server(void);
 	ULONG64 Get_Time_Second(void);
+	char * GetServerIP(void);
 
 	int Wait_For_Data(int n_Timeout_s);
 

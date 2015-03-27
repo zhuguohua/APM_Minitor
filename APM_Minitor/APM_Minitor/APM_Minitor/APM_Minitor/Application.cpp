@@ -117,10 +117,14 @@ void Class_Main_App::DoConnetOrNot()
 	else
 	{
 		CClientIdDlg dlg;
+		dlg.m_strServerIP = sc_Sock_Client.m_strServerIP;
+		dlg.m_uiServerCom = sc_Sock_Client.m_uiServerCom;
 		dlg.m_nClientId = sc_Sock_Client.m_nClientId;
 		if (dlg.DoModal() == IDOK)
 		{
 			sc_Sock_Client.m_nClientId = dlg.m_nClientId;
+			sc_Sock_Client.m_strServerIP = dlg.m_strServerIP;
+			sc_Sock_Client.m_uiServerCom = dlg.m_uiServerCom;
 			g_bDoConnect = TRUE;
 			((Class_Main_Frame *)m_pMainWnd)->m_pButtonConnectOrNot->SetWindowTextW(_T("¶Ï¿ª"));
 		}
@@ -143,7 +147,11 @@ unsigned int __stdcall Thread_Func(void *p)
 		}
 
 		//printf("Begin to Connect\n");
-		if (!sc_Sock_Client.Try_Connect_Server("121.42.15.225", 5990))
+		//AfxMessageBox((LPCTSTR)(sc_Sock_Client.m_strServerIP.GetBuffer()));
+		//CString str;
+		//str.Format(_T("%d") + sc_Sock_Client.m_strServerIP, sc_Sock_Client.m_uiServerCom);
+		//AfxMessageBox(str);
+		if (!sc_Sock_Client.Try_Connect_Server(sc_Sock_Client.GetServerIP(), sc_Sock_Client.m_uiServerCom))
 		{
 			goto connect_server;
 		}
